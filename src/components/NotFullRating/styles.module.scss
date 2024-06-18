@@ -1,0 +1,118 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	margin-inline: auto;
+	display: flex;
+	gap: 7.5vw;
+
+	&__wrapper-left {
+		width: 38%;
+		border-radius: 16px;
+		padding: 1vw 2.9vw 3.6vw 2.9vw;
+		background-color: #E4F3FF;
+	}
+
+	&__info {
+		@include font (400, clamp(10px, 1vw, 16px), 1.2em);
+		color: #837F7F;
+	}
+
+	&__image {
+		margin-block-end: 18px;
+		width: 35.4%;
+	}
+
+	&__wrapper-right {
+		width: calc(100% - 38% - 7.5vw);
+	}
+
+		&__title {
+			width: 93%;
+			margin-block: 0 3.4vw;
+			@include font (400, clamp(24px, 2.5vw, 40px), 1.2em);
+			color: var(--blue-900);
+
+			&_blue {
+				color: var(--blue-300);
+			}
+	}
+
+	&__description {
+		width: 82%;
+		@include font (400, clamp(12px, 1.25vw, 20px), 1.4em);
+		color: #535353;
+	}
+
+}
+
+@media screen and (max-width: 850px) {
+	.banner {	
+		flex-direction: column;
+		text-align: center;
+		gap: 43px;
+
+		&__wrapper-left {
+			position: relative;
+			order: 1;
+			width: 100%;
+			min-height: 39vw;
+			padding: 35px 47px;
+			display: flex;
+			align-items: flex-end;
+			@media screen and (max-width: 655px) {
+				min-height: 49vw;
+			}
+			@media screen and (max-width: 450px) {
+				padding-block-end: 15px;
+			}
+		}
+
+		&__image {
+			position: absolute;
+			left: 25.5%;
+			width: 49%;
+			@media screen and (max-width: 655px) {
+				top: -20%;
+			}
+			@media screen and (max-width: 450px) {
+				width: 40%;
+				left: 30%;
+			}
+		}
+
+		&__title {
+			margin-inline: auto;
+			margin-block-end: 27px;
+			@media screen and (max-width: 655px) {
+				width: 100%;
+			}
+		}
+
+		&__description {
+			margin-inline: auto;
+			@media screen and (max-width: 655px) {
+				width: 94%;
+			}
+		}
+
+		&__wrapper-right {
+			order: 0;
+			width: 100%;
+		}
+
+
+	&__info {
+		width: 70%;
+		margin-inline: auto;
+		color: #2672CA;
+		@media screen and (max-width: 655px) {
+			width: 84%;
+		}
+		@media screen and (max-width: 450px) {
+			width: 95%;
+		}
+	}
+	}
+}

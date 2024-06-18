@@ -1,0 +1,20 @@
+@mixin font ($font-weight, $font-size, $line-height) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+// @mixin title-font () {
+//     font-weight: 700;
+//     font-size: clamp(24px, 2.7vw, 40px);
+//     text-transform: uppercase;
+//     color: var(--red-900);
+// }
+
+// @mixin pink-card () {
+// 	padding-inline-start: 16px;
+// 	border-radius: 5px;
+// 	border: 1px solid var(--red-100);
+// 	background-color: var(--red-50);
+// }
+

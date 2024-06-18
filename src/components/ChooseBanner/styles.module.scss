@@ -1,0 +1,114 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	min-height: 31.7vw;
+	margin-inline: auto;
+	margin-block-end: 5.6vw;
+	display: flex;
+	justify-content: space-between;
+	@media screen and (min-width: 2100px) {
+		min-height: 669px;
+		max-height: 669px;
+	}
+
+	&__wrapper-left {
+		width: 38%;
+		padding: 3.5vw 2.4vw;
+		border-radius: 25px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		box-shadow: 0px 4px 21.5px 0px #0E84E51C;
+	}
+
+	&__title {
+		@include font (500, clamp(24px, 2.5vw, 40px), 1.05em);
+		color: var(--blue-900);
+
+		&_blue {
+			color: var(--blue-300);
+		}
+	}
+
+	&__info {
+		width: 97%;
+		@include font (400, clamp(12px, 0.9vw, 14px), 1.2em);
+		color: #888888;
+	}
+
+	&__wrapper-right {
+		width: 59%;
+		padding: 4.3vw 4.1vw 3vw 4.1vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-image: url(../../images/chooseBanner/background.webp);
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	&__description {
+		width: 63%;
+		@include font (400, clamp(12px, 1.5vw, 24px), 1.1em);
+		color: #FBFBFB;
+	}
+
+	&__recommendations {
+		@include font (400, clamp(10px, 1vw, 16px), 1.2em);
+		color: #F0F1F9;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.banner {	
+		flex-direction: column;
+		width: 86%;
+		text-align: center;
+
+	&__wrapper-left {
+		width: 98%;
+		margin-inline: auto;
+		margin-block-end: 6px;
+		padding: 3.5vw 0;
+		box-shadow: none;
+	}
+
+	&__title {
+		margin-block-end: 23px;
+	}
+
+	&__info {
+		width: 100%;
+	}
+
+	&__wrapper-right {
+		width: 100%;
+		min-height: 55vw;
+		padding: 5.2vw 13vw;
+		gap: 10px;
+		justify-content: start;
+		background-image: url(../../images/chooseBanner/background-mobile.webp);
+		@media screen and (max-width: 430px) {
+			padding: 5.2vw 3vw;
+		}
+	}
+
+	&__description {
+		order: 2;
+		width: 100%;
+		font-size: 16px;
+		@media screen and (max-width: 800px) {
+			font-size: 12px;
+		}
+		@media screen and (max-width: 430px) {
+			font-size: 10px;
+		}
+	}
+
+	&__recommendations {
+		order: 1;
+	}
+	}
+}

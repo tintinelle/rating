@@ -1,0 +1,32 @@
+@import "../../style/css/mixins.scss";
+
+.button {
+	padding-block: 12.5px;
+	border-radius: 30px;
+
+  &_white {
+		@include font (400, clamp(10px, 1vw, 16px), 1.2em);
+		font-family: var(--font-third);
+		background-color: #FFFFFF;
+		color: #000000;
+	}
+
+	&_blue {
+		font-family: var(--font-main);
+		background: var(--button-blue-gradient);
+		color: #FFFFFF;
+		border: 1px solid #418DF9;
+	}
+
+	&_clear-red {
+		background-color: transparent;
+		border: 1px solid var(--red-500);
+		color: var(--red-600);
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	.button {
+	flex-grow: 1;
+	}
+}

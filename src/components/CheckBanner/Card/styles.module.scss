@@ -1,0 +1,38 @@
+@import "../../../style/css/mixins.scss";
+
+.card {	
+	width: calc((100% - 6.5vw) / 3);
+	padding: 1.9vw;
+	border-radius: 25px;
+	box-shadow: 0px 4px 13px 0px #0E84E51F;
+
+	&__title {
+		width: 84%;
+		margin-block: 26px 40px;
+		@include font (500, clamp(12px, 1vw, 16px), 1.2em);
+		color: var(--blue-900);
+	}
+
+	&__description {
+		width: 84%;
+		@include font (400, clamp(10px, 0.9vw, 14px), 1.4em);
+		color: #7C7C7C;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.card {	
+		width: calc((100% - 11px) / 2);
+		text-align: center;
+		padding: 5.7vw 3vw;
+
+		&__title {
+			width: 100%;
+			margin-block: 25px 21px;
+		}
+
+		&__description {
+			width: 100%;
+		}
+	}
+}

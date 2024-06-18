@@ -1,0 +1,64 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	margin-inline: auto;
+	margin-block: 1.7vw 2vw;
+	padding-inline: 3vw 2vw;
+	display: flex;
+	justify-content: space-between;
+
+	&__wrapper-right {
+		width: 55%;
+	}
+
+	&__title {
+		margin-block: 3vw 3.3vw;
+		@include font (400, clamp(24px, 2.5vw, 40px), 1.2em);
+		color: var(--blue-900);
+
+		&_blue {
+			color: var(--blue-300);
+		}
+	}
+
+	&__description {
+		width: 69%;
+		@include font (400, clamp(12px, 1.25vw, 20px), 1.4em);
+		color: #727477;
+	}
+
+	&__image {
+		width: 23.7vw;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.banner {	
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 0;
+		margin-block-start: 0;
+
+		&__wrapper-right {
+			width: 100%;
+		}
+
+		&__title {
+			width: 79%;
+			margin-block: 24px;
+			margin-inline: auto;		}
+
+		&__description {
+			width: 78%;
+			margin-inline: auto;
+		}
+
+		&__image {
+			order: 3;
+			width: 52%;
+		}
+	}
+}

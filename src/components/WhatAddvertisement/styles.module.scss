@@ -1,0 +1,117 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	margin-inline: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-block-end: 4.1vw;
+
+	&__title {
+		width: 34.4%;
+		margin-block: 0;
+		@include font (400, clamp(24px, 2.5vw, 40px), 1.13em);
+		color: var(--blue-900);
+
+		&_blue {
+			color: var(--blue-300);
+		}
+	}
+
+	&__description {
+		align-self: center;
+		width: 54%;
+		padding-inline-end: 9%;
+		@include font (400, clamp(12px, 1.25vw, 20px), 1.4em);
+		color: #727477;
+	}
+
+	&__cards {
+		width: 100%;
+		margin-block-start: 3.5vw;
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 1.6vw;
+		row-gap: 2.1vw;
+	}
+
+	&__subtitle {
+		width: 100%;
+		@include font (400, clamp(11px, 1.25vw, 20px), 1.35em);
+		color: #727477;
+	}
+
+	&__card {
+		width: calc((100% - 3.2vw) / 3);
+		min-height: 10.8vw;
+		padding: 1.8vw 2.3vw;
+		border-radius: 20px;
+		box-shadow: 0px 4px 21.5px 0px hsla(207, 88%, 48%, 0.11);
+		&:nth-of-type(1)p {
+			width: 94%;
+		}
+	}
+
+	&__info {
+		margin-block-start: 1.6vw;
+		@include font (400, clamp(10px, 1vw, 16px), 1.4em);
+		color: #7C7C7C;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.banner {	
+		display: flex;
+		column-gap: 11px;
+		row-gap: 0;
+		margin-block-end: 25px;
+
+		&__title {
+			width: 90%;
+			text-align: center;
+			margin-block-end: 16px;
+			margin-inline: auto;
+		}
+
+		&__description {
+			order: 4;
+			width: calc((100% - 35px) / 2);
+			margin-inline-start: 12px;
+			margin-block: auto;
+			text-transform: lowercase;
+			color: #727477;
+			@media screen and (max-width: 420px) {
+				font-size: 10px;
+				line-height: 12px;
+			}
+		}
+
+		&__cards {
+			display: contents;
+		}
+		
+		&__subtitle {
+			margin-block-end: 34px;
+			text-align: center;
+		}
+
+		&__card {
+			width: calc((100% - 11px) / 2);
+			min-height: 23vw;
+			margin-block-end: 17px;
+			display: flex;
+			gap: 2.1vw;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-transform: lowercase;
+			text-align: center;
+
+			@media screen and (max-width: 600px) {
+				min-height: 43vw;
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+@import "../../style/css/mixins.scss";
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100vw;
+	height: 100vh;
+	background: #37373785;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup {	
+	width: 38vw;
+	max-height: 700px;
+	padding-block: 4.4vw 2vw;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #FFFFFF;
+
+	@media screen and (max-width: 1050px) {
+		width: 68vw;
+	}
+	@media screen and (max-width: 700px) {
+		width: 80vw;
+		padding-block: 6vw 4vw;
+	}
+
+	&__title {
+		width: 91%;
+		margin-block: 0 19px;
+		@include font (400, clamp(24px, 2.2vw, 36px), 1.05em);
+		color: var(--blue-900);
+	}
+
+	&__description {
+		width: 69%;
+		@include font (400, clamp(12px, 1vw, 16px), 1.4em);
+		color: #747272;
+		@media screen and (max-width: 700px) {
+			width: 80%;
+		}
+	}
+}
+
+.form {
+	width: 77%;
+	margin-block-start: 2.1vw;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1.5%;
+
+	&__input-wrapper {
+		width: 100%;
+		margin-block-end: 12px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: flex-start;
+
+		&_narrow {
+			&:nth-child(odd) {
+				width: 44%;
+			}
+			&:nth-child(even) {
+				width: 54.5%;
+			}
+		}
+	}
+
+	&__input {
+		width: 100%;
+		padding: 1.1vw 1.9vw;
+		border-radius: 30px;
+		border: none;
+		background-color: #F6F5F8CC;
+		color: #747272;
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+
+		&::placeholder {
+			color: #0E344A40;
+		}
+
+		&_error {
+			background-color: #FC585820;
+		}
+	}
+
+	&__error {
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+		color: var(--orange-red);
+	}
+
+	&__button-info {
+		width: 100%;
+		padding-inline: 26%;
+		margin-block: 1.4vw 0.9vw;
+		margin-inline: auto;
+		opacity: 20%;
+		@include font (400, 10px, 1em);
+		letter-spacing: -0.05em;
+		color: #0E344A;
+
+		a {
+			color: #0E344A;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media screen and (max-width: 1600px) {
+			padding-inline: 15%;
+		}
+	}
+
+	&__button {
+		width: 41%;
+		padding-block: 18px;
+		border-radius: 30px;
+		margin-inline: auto;
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+		background: var(--button-blue-gradient);
+		color: #FFFFFF;
+	}
+}

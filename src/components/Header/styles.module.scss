@@ -1,0 +1,100 @@
+@import "../../style/css/mixins.scss";
+
+.header {
+	box-sizing: border-box;
+  top: 0;
+	width: 100%;
+	min-height: 55px;
+	padding-inline-start: 9vw;
+	display: flex;
+	gap: 9vw;
+	align-items: center;
+	background-color: var(--blue-100);
+
+	&_transparent {
+		background-color: transparent;
+	}
+
+	@media screen and (max-width: 1200px) {
+		gap: 3vw;
+	}
+
+	&__button-burger {
+		background-color: transparent;
+		display: none;
+	}
+}
+
+.navbar {
+	width: 48%;
+	@include font (400, 16px, 1.4em);
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding-inline: 9vw 7.3vw;
+		margin-block-end: 25px;
+	}
+
+	&__links {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	&__link {
+		color: var(--gray-500);
+
+		&_white {
+			color: #FFFFFF;
+		}
+	}
+
+	@media screen and (max-width: 1500px) {
+		width: 60%;
+	}
+	@media screen and (max-width: 1200px) {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.header {
+		justify-content: space-between;
+		padding-inline-end: 7.3vw;
+		background-color: #FFFFFF;
+
+		&_transparent {
+			background-color: transparent;
+		}
+
+
+		&__button-burger {
+			display: block;
+		}
+	}
+	.navbar {
+		position: fixed;
+		z-index: 6;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		padding-block: 17px 92px;
+		background-color: var(--gray-300);
+		transition: top 0.8s;
+
+		&_active {
+			top: 0;
+		}
+
+		&__links {
+			flex-direction: column;
+			align-items: center;
+			gap: 43px;
+		}
+
+		&__link {
+			color: #FFFFFF;
+		}
+	}
+}

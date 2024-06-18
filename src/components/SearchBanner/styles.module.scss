@@ -1,0 +1,75 @@
+@import "../../style/css/mixins.scss";
+
+.banner {
+	width: 85%;
+	max-width: var(--max-width-block);
+	min-height: 16.8vw;
+	display: flex;
+	gap: 11.3vw;
+	margin-inline: auto;
+	margin-block: 2.6vw 3vw;
+	padding: 4vw 5vw 3.6vw 5vw;
+	border-radius: 25px;
+	box-shadow: 0px 4px 15.6px 0px #0E84E51F;
+	background: linear-gradient(103.78deg, #FFFFFF 19.53%, rgba(130, 191, 242, 0.71) 54.79%, rgba(14, 132, 229, 0.61) 70%);
+
+	@media screen and (min-width: 1700px) {
+		min-height: auto;
+	}
+
+	&__title {
+		width: 40%;
+		@include font (500, clamp(24px, 2.5vw, 40px), 1.05em);
+		color: var(--blue-900);
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2.3vw;
+	}
+
+	&__description {
+		width: 65%;
+		@include font (400, clamp(12px, 1vw, 16px), 1.4em);
+		color: #4C6989;
+	}
+
+	button {
+		@include font (400, clamp(12px, 0.9vw, 14px), 1.3em);
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.banner {
+		gap: 5vw;
+
+		&__description {
+			width: 75%;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.banner {
+		padding: 6.9vw 5.6vw 8.1vw 5.6vw; 
+		flex-direction: column;
+		gap: 6.7vw;
+		text-align: center;
+		background: linear-gradient(103.78deg, #FFFFFF 19.53%, rgba(130, 191, 242, 0.71) 74.79%, rgba(14, 132, 229, 0.61) 138.1%);
+
+		&__title {
+			width: 87%;
+			margin-inline: auto;
+		}
+
+		&__description {
+			width: 87%;
+			margin-inline: auto;
+		}
+
+		button {
+			margin-inline: auto;
+		}
+	}
+}

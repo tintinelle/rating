@@ -1,0 +1,121 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	margin-inline: auto;
+	margin-block-start: -3vw;
+	display: flex;
+	gap: 12%;
+	padding-block-start: 7.4vw;
+	background-image: url(../../images/whyToBuy/background.svg);
+	background-repeat: no-repeat;
+	background-position: right -3vw;
+
+	@media screen and (min-width: 1700px) {
+		padding-block-start: 4vw;
+	}
+
+	@media screen and (max-width: 1200px) {
+		gap: 5%;
+	}
+
+	&__title-group {
+		width: 53%;
+	}
+
+	&__title {
+		margin-block-end: 2vw;
+		@include font (500, clamp(24px, 2.5vw, 40px), 1.05em);
+		color: var(--blue-900);
+
+		&_blue {
+			color: var(--blue-300);
+		}
+	}
+
+	&__description {
+		@include font (400, clamp(12px, 1vw, 16px), 1.4em);
+		color: #7C7C7C;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+	}
+
+	&__card {
+		min-height: 11vw;
+		padding: 1.2vw 3vw 2vw 3vw;
+		border-radius: 20px;
+		box-shadow: 0px 4px 21.5px 0px #0E84E51C;
+		display: flex;
+		gap: 7.9%;
+		background-color: #FFFFFF;
+
+		@media screen and (min-width: 1700px) {
+			min-height: auto;
+		}
+	}
+
+	&__text-group {
+		width: 56%;
+		@media screen and (max-width: 1200px) {
+			width: 80%;
+		}
+	}
+
+	&__subtitle {
+		margin-block: 17px; 
+		@include font (500, clamp(13px, 1.25vw, 20px), 1.2em);
+		color: var(--blue-900);
+	}
+
+	&__text {
+		@include font (400, clamp(10px, 0.9vw, 14px), 1.3em);
+		color: #7C7C7C;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.banner {	
+		flex-direction: column;
+		gap: 38px;
+		background-image: none;
+		text-align: center;
+
+		&__title-group {
+			width: 94%;
+			margin-inline: auto;
+		}
+
+		&__wrapper {
+			flex-direction: row;
+			gap: 10px;
+		}
+
+		&__card {
+			width: calc((100% - 10px) / 2);
+			padding: 5.2vw 1.5vw;
+			flex-direction: column;
+			align-items: center;
+			gap: 21px;
+			@media screen and (max-width: 500px) {	
+				min-height: 52.5vw;
+			}
+
+			svg {
+				width: 31px;
+			}
+		}
+
+		&__subtitle {
+			margin-block: 0 21px; 
+		}
+
+		&__text {
+			color: #4C6989;
+		}
+	}
+}

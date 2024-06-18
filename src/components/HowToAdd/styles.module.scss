@@ -1,0 +1,104 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 85%;
+	max-width: var(--max-width-block);
+	margin-inline: auto;
+	margin-block-end: 6.1vw;
+	display: flex;
+	gap: 1.7vw;
+
+	&__wrapper-left {
+		width: 77%;
+		min-height: 23.4vw;
+		padding: 2.7vw 3vw;
+		border-radius: 25px;
+		box-shadow: 0px 4px 21.5px 0px #0E84E51C;
+		background-image: url(../../images/howToAdd/circles.svg);
+		background-size: 33%;
+		background-repeat: no-repeat;
+		background-position: bottom 7% left 10%;
+	}
+
+	&__title {
+		width: 86%;
+		margin-block: 0;
+		@include font (400, clamp(24px, 2.5vw, 40px), 1.13em);
+		color: var(--blue-900);
+
+		&_blue {
+			color: var(--blue-300);
+		}
+	}
+
+	&__wrapper-right {
+		width: 91%;
+		min-height: 23.4vw;
+		padding: 4vw 3.5vw;
+		border-radius: 25px;
+		background-image: url(../../images/howToAdd/background.webp);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&__info {
+		width: 85%;
+		@include font (400, clamp(12px, 1.5vw, 24px), 1.1em);
+		color: #FBFBFB;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.banner {	
+		flex-direction: column;
+		text-align: center;
+		gap: 3vw;
+
+		&__wrapper-left {
+			width: 100%;
+			padding: 0;
+			min-height: auto;
+			box-shadow: none;
+			background-image: none;
+		}
+
+		&__title {
+			width: 70%;
+			margin-inline: auto;
+			@media screen and (max-width: 481px) {
+				width: 83%;
+			}
+		}
+
+		&__wrapper-right {
+			width: 100%;
+			padding-block-start: 8.3vw;
+			background-image: url(../../images/howToAdd/background-mobile.webp);
+			min-height: 49vw;
+		}
+
+		&__info {
+			width: 81%;
+			margin-inline: auto;
+			font-size: 20px;
+			line-height: 28px;
+			margin-block-start: 3vw;
+			@media screen and (max-width: 780px) {
+				// width: 71%;
+				font-size: 16px;
+				line-height: 20px;
+				margin-block-start: 1vw;
+			}
+			@media screen and (max-width: 640px) {
+				width: 71%;
+				font-size: 14px;
+				line-height: 16px;
+				margin-block-start: 0;
+			}
+			@media screen and (max-width: 550px) {
+				font-size: 12px;
+				line-height: 12.9px;
+			}
+		}
+	}
+}

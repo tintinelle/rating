@@ -1,0 +1,40 @@
+@import "../../style/css/mixins.scss";
+
+.banner {	
+	width: 100%;
+	min-height: 19.5vw;
+	margin-block-start: -55px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	background-image: url(../../images/bannerProviders/background.webp);
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	&__title {
+		width: 70%;
+		margin-block: 3vw 0;
+		margin-inline: auto;
+		text-align: center;
+		@include font (600, clamp(24px, 3vw, 48px), 1.02em);
+		color: #FFFFFF;
+	}
+
+}
+
+	@media screen and (max-width: 800px) {
+		.banner {	
+			min-height: 41.25vw;
+			background-image: url(../../images/bannerProviders/background-mobile.webp);
+			background-size: cover;
+
+			&__title{
+				width: 73%;				
+
+				@media screen and (max-width: 430px) {
+					font-size: 18px;
+					margin-block-start: 9vw;
+				}
+			}
+		}
+	}

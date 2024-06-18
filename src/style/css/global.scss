@@ -1,0 +1,122 @@
+:root {
+  --font-main: "Manrope", sans-serif;
+  --font-second: "Open Sans", sans-serif;
+  --font-third: "Inter", sans-serif;
+  // --third-family: "Unbounded", sans-serif;
+  // --font4: "Rubik", sans-serif;
+  // --font5: "Caveat", sans-serif;
+
+	--blue-100: #E7F4FFDE;
+	--blue-300: #418DF9;
+	--blue-400: #4072D4;
+	--blue-500: #3472D1;
+	--blue-900: #001336;
+
+	--gray-50: #DCD2D2;
+	--gray-70: #B7B7B7;
+	--gray-100: #919191;
+	--gray-200: #757575;
+	--gray-300: #747474;
+	--gray-400: #4B4545;
+	--gray-500: #4C5156;
+	--gray-600: #5E5E5E;
+	--gray-800: #4D4D4D;
+
+	--orange-red: #FC5858;
+	// --gray-00: ;
+
+	--button-blue-gradient: linear-gradient(90.35deg, #2672CA 5.04%, #0054B6 123.8%);
+
+	--max-width-block: 1800px;
+}
+
+body {
+    font-family: var(--font-main);
+		// color: var(--general-black);
+    position: relative;
+    
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+    }
+    *{
+      // outline: 1px solid pink;
+			box-sizing: border-box;
+    }
+}
+
+// max-width: var(--max-width-block);
+// margin-inline: auto;
+
+// @media screen and (max-width: 1150px) {}
+
+// @media screen and (max-width: 550px) {
+// 	.{
+// 		&__title-group {
+// 			flex-direction: column;
+// 			gap: 16px;
+// 		}
+
+// 		&__title {
+// 			width: 100%;
+// 		}
+
+// 		&__description {
+// 			width: 100%;
+// 			text-align: left;
+// 		}
+// 	}
+// }
+
+// Fonts
+
+//  Title
+// @include font (500, 40px, 42px);
+// @include font (500, clamp(24px, 2.5vw, 40px), 1.05em);
+
+// @include font (600, 48px, 49px);
+// @include font (600, clamp(24px, 3vw, 48px), 1.02em);
+
+// @include font (600, 24px, 28px);
+// @include font (600, clamp(16px, 1.5vw, 24px), 1.17em);
+
+// @include font (400, 36px, 38px);
+// @include font (400, clamp(24px, 2.2vw, 36px), 1.05em);
+
+
+
+// Text
+
+// @include font (400, 8px, 9.6px);
+// @include font (400, clamp(6px, 0.5vw, 8px), 1.2em);
+
+// @include font (400, 11px, 14px);
+// @include font (400, clamp(6px, 0.68vw, 11px), 1.25em);
+
+// @include font (400, 12px, 15px);
+// @include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+
+// @include font (400, 14px, 18px);
+// @include font (400, clamp(12px, 0.9vw, 14px), 1.3em);
+
+// @include font (400, 16px, 19px);
+// @include font (400, clamp(10px, 1vw, 16px), 1.2em);
+
+// @include font (400, 16px, 22px);
+// @include font (400, clamp(12px, 1vw, 16px), 1.4em);
+
+// @include font (400, 20px, 24px);
+// @include font (400, clamp(12px, 1.25vw, 20px), 1.2em);
+
+// @include font (400, 24px, 26px);
+// @include font (400, clamp(12px, 1.5vw, 24px), 1.1em);
+
+// @include font (400, 24px, 32px);
+// @include font (400, clamp(16px, 1.5vw, 24px), 1.3em);
+
+// @include font (400, 32px, 43px);
+// @include font (400, clamp(20px, 1.9vw, 32px), 1.3em);

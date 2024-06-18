@@ -1,0 +1,217 @@
+@import "../../../style/css/mixins.scss";
+
+.card {	
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40px 23px 16% 32% 7% 1fr;
+	padding: 3.4% 2.5%;
+
+	&_even {
+		border-radius: 10px;
+		background: linear-gradient(101.36deg, #FFFFFF 0, rgba(14, 132, 229, 0.36) 55%, #FFFFFF 130%);
+	}
+
+	&__company-number {
+		grid-area: 1/1/2/2;
+		font-family: var(--font-second);
+		@include font (400, clamp(12px, 1.25vw, 20px), 1.35em);
+		color: #000000;
+	}
+
+	&__title-group {
+		grid-area: 1/3/3/4;
+	}
+
+	&__title {
+		margin-block: 0 11px;
+		text-transform: uppercase;
+		@include font (400, clamp(16px, 1.5vw, 24px), 1.3em);
+		letter-spacing: -0.05em;
+		color: var(--blue-900);
+	}
+
+	&__info-group {
+		grid-area: 1/4/2/5;
+		display: flex;
+		gap: 14%;
+		margin-block-end: 2.4vw;
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+	}
+
+	&__description {
+		grid-area: 1/6/2/7;
+		width: 90%;
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+		letter-spacing: -0.05em;
+		color: #666666;
+	}
+
+	&__number {
+		font-family: var(--font-third);
+		@include font (500, clamp(10px, 1vw, 16px), 1.2em);
+		color: var(--blue-900);
+	}
+
+	&__review-group {
+		grid-area: 2/4/4/5;
+		position: relative;
+	}
+
+	&__tag {
+		margin-block: 0; 
+		@include font (500, clamp(10px, 0.9vw, 14px), 1.3em);
+		color: var(--blue-300);
+	}
+
+	&__review-row {
+		width: 86%;
+		margin-block: 21px 11px; 
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__review-title {
+		margin-block: 0; 
+		font-family: var(--font-third);
+		@include font (400, clamp(10px, 0.9vw, 14px), 1.3em);
+		color: #3C3C3C;
+	}
+
+	&__review-text {
+		width: 72%;
+		@include font (400, clamp(8px, 0.73vw, 12px), 1.25em);
+		letter-spacing: -0.05em;
+		color: #666666;
+	}
+
+	&__review-date {
+		font-family: var(--font-second);
+		letter-spacing: -0.05em;
+		@include font (400, clamp(6px, 0.68vw, 11px), 1.25em);
+		color: #ABABAB;
+	}
+
+	&__review-buttons {
+		margin-block-start: 15px;
+		display: flex;
+		gap: 11px;
+	}
+
+	&__review-more-button {
+		min-width: 6.7vw;
+		min-height: 26px;
+		border-radius: 80px;
+		font-family: var(--font-third);
+		@include font (400, 10px, 12px);
+		color: #A39393;
+		background-color: #D6D6D6;
+
+		&_white {
+			background-color: #FFFFFF;
+		}
+	}
+
+	&__review-hide-button {
+		background-color: transparent;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		font-family: var(--font-third);
+		@include font (400, 10px, 12px);
+		color: #A39393;
+	}
+
+	&__buttons-group {
+		grid-area: 3/6/4/7;
+		width: 92%;
+		display: flex;
+		gap: 4.4%;
+	}
+
+	&__button {
+		padding: 0;
+		display: flex;
+		gap: 9px;
+		align-items: center;
+		background-color: transparent;
+		font-family: var(--font-second);
+		@include font (400, clamp(8px, 0.73vw, 12px), 1em);
+		text-transform: lowercase;
+		color: #404040;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.card {	
+	grid-template-columns: 15px 14px 24% 6% 1fr;
+	padding: 7.1% 5.5%;
+
+	&__title {
+		margin: 0;
+		@media screen and (max-width: 370px) {
+			font-size: 12px;
+		}
+	}
+
+	&__info-group {
+		grid-area: 1/5/2/6;
+		@media screen and (max-width: 530px) {
+			gap: 1px;
+			justify-content: space-between;
+		}
+	}
+
+	&__description {
+		grid-area: 2/5/3/6;
+		width: 100%;
+	}
+
+	&__review-group {
+		grid-area: 3/5/4/6;
+	}
+
+	&__tag {
+		margin-block-start: 13px; 
+	}
+
+	&__review-row {
+		margin-block: 14px 8px; 
+	}
+
+	&__review-text {
+		width: 100%;
+	}
+
+	&__review-buttons {
+		margin-block-start: 20px;
+	}
+
+	&__review-more-button {
+		@include font (400, 8px, 12px);
+	}
+
+	&__buttons-group {
+		grid-area: 3/2/4/4;
+		flex-direction: column;
+		align-self: flex-end;
+		gap: 14px;
+
+		@media screen and (max-width: 370px) {
+			grid-area: 3/1/4/5
+		}
+		
+		svg {
+			width: 12px;
+		}
+	}
+
+	&__button {
+		gap: 5px;
+		text-align: left;
+	}
+	}
+}
