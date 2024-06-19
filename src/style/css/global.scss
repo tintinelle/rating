@@ -39,56 +39,6 @@ body {
       cursor: pointer;
     }
     *{
-      // outline: 1px solid pink;
 			box-sizing: border-box;
     }
 }
-
-// Fonts
-
-//  Title
-// @include font (500, 40px, 42px);
-// @include font (500, clamp(24px, 2.5vw, 40px), 1.05em);
-
-// @include font (600, 48px, 49px);
-// @include font (600, clamp(24px, 3vw, 48px), 1.02em);
-
-// @include font (600, 24px, 28px);
-// @include font (600, clamp(16px, 1.5vw, 24px), 1.17em);
-
-// @include font (400, 36px, 38px);
-// @include font (400, clamp(24px, 2.2vw, 36px), 1.05em);
-
-
-
-// Text
-
-// @include font (400, 8px, 9.6px);
-// @include font (400, clamp(6px, 0.5vw, 8px), 1.2em);
-
-// @include font (400, 11px, 14px);
-// @include font (400, clamp(6px, 0.68vw, 11px), 1.25em);
-
-// @include font (400, 12px, 15px);
-// @include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
-
-// @include font (400, 14px, 18px);
-// @include font (400, clamp(12px, 0.9vw, 14px), 1.3em);
-
-// @include font (400, 16px, 19px);
-// @include font (400, clamp(10px, 1vw, 16px), 1.2em);
-
-// @include font (400, 16px, 22px);
-// @include font (400, clamp(12px, 1vw, 16px), 1.4em);
-
-// @include font (400, 20px, 24px);
-// @include font (400, clamp(12px, 1.25vw, 20px), 1.2em);
-
-// @include font (400, 24px, 26px);
-// @include font (400, clamp(12px, 1.5vw, 24px), 1.1em);
-
-// @include font (400, 24px, 32px);
-// @include font (400, clamp(16px, 1.5vw, 24px), 1.3em);
-
-// @include font (400, 32px, 43px);
-// @include font (400, clamp(20px, 1.9vw, 32px), 1.3em);

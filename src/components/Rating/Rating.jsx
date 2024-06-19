@@ -1,6 +1,5 @@
 import style from "./styles.module.scss";
 import axios from "axios";
-import CompaniesData from "../../constants/Rating/CompaniesData";
 import Row from "./Row/Row";
 import Button from "../Button/Button";
 import useWindowDimensions from "../../services/useWindowDimensions";
@@ -26,13 +25,31 @@ const Rating = ({
     }
   }, [width]);
 
-  // const [likesCount, setLikesCount] = useState();
-  // const handleLike = (companyId) => {};
+  const handleLikeDislike = (action, companyId) => {
+    const updatedCompanies = data.map((company) => {
+      if (company.id === companyId) {
+        if (action === "like") {
+          return {
+            ...company,
+            positive: company.positive + 1,
+          };
+        }
+        if (action === "dislike") {
+          return {
+            ...company,
+            negative: company.negative + 1,
+          };
+        }
+      }
+      return company;
+    });
+    setData(updatedCompanies);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("CompaniesData.json");
-      setData(result.data);
+      setData(result.data.companies);
     };
     fetchData();
   }, []);
@@ -40,8 +57,8 @@ const Rating = ({
   return (
     <section className={style["rating"]}>
       <div className={style["rating__rows"]}>
-        {data.companies
-          ? data.companies.map((item, index) => {
+        {data
+          ? data.map((item, index) => {
               return (
                 <Row
                   item={item}
@@ -49,6 +66,7 @@ const Rating = ({
                   number={index + 1}
                   handleOpenPopUpReview={handleOpenPopUpReview}
                   handleOpenPopUpBuy={handleOpenPopUpBuy}
+                  handleLikeDislike={handleLikeDislike}
                 />
               );
             })
