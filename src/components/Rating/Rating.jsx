@@ -1,13 +1,17 @@
 import style from "./styles.module.scss";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 import CompaniesData from "../../constants/Rating/CompaniesData";
 import Row from "./Row/Row";
 import Button from "../Button/Button";
 import useWindowDimensions from "../../services/useWindowDimensions";
 import { useState, useEffect } from "react";
 
-const Rating = () => {
+const Rating = ({
+  handleOpenPopUpAdd,
+  handleOpenPopUpReview,
+  handleOpenPopUpBuy,
+}) => {
+  const [data, setData] = useState([]);
   const { width } = useWindowDimensions();
   const [buttonWidth, setButtonWidth] = useState("17.5vw");
   useEffect(() => {
@@ -22,47 +26,39 @@ const Rating = () => {
     }
   }, [width]);
 
-  // react Hook For State Handler
-  // const [data, setData] = useState([]);
+  // const [likesCount, setLikesCount] = useState();
+  // const handleLike = (companyId) => {};
 
-  // Fetch Function
-  // useEffect(() => {
-  //   fetch("../../constants/Rating/CompaniesData.json")
-  //     .then(function (res) {
-  //       return res.json();
-  //     })
-  //     .then(function (data) {
-  //       // store Data in State Data Variable
-  //       setData(data);
-  //     })
-  //     .catch(function (err) {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // useEffect(() => {
-  //   axios.get("../../constants/Rating/CompaniesData.json").then((res) => {
-  //     setData(res.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get("CompaniesData.json");
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <section className={style["rating"]}>
       <div className={style["rating__rows"]}>
-        {/* {data
-          ? data.map((item) => {
-              return <Row item={item} key={item.id} />;
+        {data.companies
+          ? data.companies.map((item, index) => {
+              return (
+                <Row
+                  item={item}
+                  key={item.id}
+                  number={index + 1}
+                  handleOpenPopUpReview={handleOpenPopUpReview}
+                  handleOpenPopUpBuy={handleOpenPopUpBuy}
+                />
+              );
             })
-          : " "} */}
-        {CompaniesData.map((item, index) => {
-          return <Row item={item} key={item.id} number={index + 1} />;
-        })}
+          : " "}
       </div>
       <Button
         buttonClass="button_blue"
         text="Добавить компанию в рейтинг"
         width={buttonWidth}
-        // handleClick={displayModalForm}
+        handleClick={handleOpenPopUpAdd}
       />
     </section>
   );

@@ -10,25 +10,41 @@ import ReviewsBanner from "../components/ReviewsBanner/ReviewsBanner";
 import Regions from "../components/Regions/Regions";
 import Footer from "../components/Footer/Footer";
 import PopUpBuy from "../components/PopUps/PopUpBuy";
-import PopUpReview from "../components/PopUps/PopUpReview";
-import PopUpMark from "../components/PopUps/PopUpMark";
 import PopUpAdd from "../components/PopUps/PopUpAdd";
 import PopUpChoose from "../components/PopUps/PopUpChoose";
+import PopUpReview from "../components/PopUps/PopUpReview";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 function MainPage() {
-  const [showPopUpReview, setShowPopUpReview] = useState(false);
-  const [showPopUpMark, setShowPopUpMark] = useState(false);
   const [showPopUpAdd, setShowPopUpAdd] = useState(false);
   const [showPopUpChoose, setShowPopUpChoose] = useState(false);
   const [showPopUpBuy, setShowPopUpBuy] = useState(false);
+  const [showPopUpReview, setShowPopUpReview] = useState(false);
 
   const handleOpenPopUpBuy = () => {
-    setShowPopUpBuy(true);
+    setTimeout(() => {
+      setShowPopUpBuy(true);
+    }, 0);
   };
 
-  // console.log(showPopUpBuy);
+  const handleOpenPopUpAdd = () => {
+    setTimeout(() => {
+      setShowPopUpAdd(true);
+    }, 0);
+  };
+
+  const handleOpenPopUpChoose = () => {
+    setTimeout(() => {
+      setShowPopUpChoose(true);
+    }, 0);
+  };
+
+  const handleOpenPopUpReview = () => {
+    setTimeout(() => {
+      setShowPopUpReview(true);
+    }, 0);
+  };
 
   const location = useLocation();
   useEffect(() => {
@@ -37,10 +53,6 @@ function MainPage() {
 
   return (
     <>
-      {showPopUpReview && (
-        <PopUpReview onClose={() => setShowPopUpReview(false)} />
-      )}
-      {showPopUpMark && <PopUpMark onClose={() => setShowPopUpMark(false)} />}
       {showPopUpAdd && <PopUpAdd onClose={() => setShowPopUpAdd(false)} />}
       {showPopUpChoose && (
         <PopUpChoose onClose={() => setShowPopUpChoose(false)} />
@@ -48,17 +60,24 @@ function MainPage() {
       {showPopUpBuy && (
         <PopUpBuy onClose={() => setShowPopUpBuy(!showPopUpBuy)} />
       )}
+      {showPopUpReview && (
+        <PopUpReview onClose={() => setShowPopUpReview(!showPopUpReview)} />
+      )}
       <Header />
       <BannerMain handleOpenPopUpBuy={handleOpenPopUpBuy} />
-      <Rating />
-      <SearchBanner />
+      <Rating
+        handleOpenPopUpAdd={handleOpenPopUpAdd}
+        handleOpenPopUpReview={handleOpenPopUpReview}
+        handleOpenPopUpBuy={handleOpenPopUpBuy}
+      />
+      <SearchBanner handleOpenPopUpChoose={handleOpenPopUpChoose} />
       <WhyToBuy />
       <WhereToBuy />
       <CheckBanner />
       <ChooseBanner />
       <ReviewsBanner />
       <Regions />
-      <Footer />
+      <Footer handleOpenPopUpBuy={handleOpenPopUpBuy} />
     </>
   );
 }

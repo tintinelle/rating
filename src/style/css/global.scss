@@ -2,9 +2,6 @@
   --font-main: "Manrope", sans-serif;
   --font-second: "Open Sans", sans-serif;
   --font-third: "Inter", sans-serif;
-  // --third-family: "Unbounded", sans-serif;
-  // --font4: "Rubik", sans-serif;
-  // --font5: "Caveat", sans-serif;
 
 	--blue-100: #E7F4FFDE;
 	--blue-300: #418DF9;
@@ -23,7 +20,6 @@
 	--gray-800: #4D4D4D;
 
 	--orange-red: #FC5858;
-	// --gray-00: ;
 
 	--button-blue-gradient: linear-gradient(90.35deg, #2672CA 5.04%, #0054B6 123.8%);
 
@@ -32,7 +28,6 @@
 
 body {
     font-family: var(--font-main);
-		// color: var(--general-black);
     position: relative;
     
     a {
@@ -48,29 +43,6 @@ body {
 			box-sizing: border-box;
     }
 }
-
-// max-width: var(--max-width-block);
-// margin-inline: auto;
-
-// @media screen and (max-width: 1150px) {}
-
-// @media screen and (max-width: 550px) {
-// 	.{
-// 		&__title-group {
-// 			flex-direction: column;
-// 			gap: 16px;
-// 		}
-
-// 		&__title {
-// 			width: 100%;
-// 		}
-
-// 		&__description {
-// 			width: 100%;
-// 			text-align: left;
-// 		}
-// 	}
-// }
 
 // Fonts
 

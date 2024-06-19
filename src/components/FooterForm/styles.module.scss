@@ -2,97 +2,249 @@
 
 .footer {
 	min-height: 30vw;
-	padding-block: 52px 25px;
+	padding: 1.5vw 5.2vw 2.5vw 7.3vw;
 	border-radius: 20px;
-	// display: grid;
-	// grid-template-columns: 7.6% 21.4% 5.7% 42% 5.9% 1fr 6%;
-	// grid-template-rows: 56px 108px 1fr;
+	display: grid;
+	grid-template-columns: 31% 7% 19% 12% 31%;
 	@include font (400, clamp(12px, 1vw, 16px), 1.4em);
 	background-color: var(--blue-500);
 	color: #FFFFFF;
 
 	&__title {
-		grid-area: 1/2/2/3;
+		grid-area: 1/1/2/2;
+		align-self: center;
 		text-transform: uppercase;
 		@include font (600, clamp(16px, 1.9vw, 32px), 1.15em);
 	}
 
 	&__contacts {
-		grid-area: 2/2/3/3;
-		align-self: center;
+		grid-area: 2/1/3/2;
 		display: flex;
 		flex-direction: column;
-		// gap: 52px;
+		gap: 1.8vw;
 	}
 
 	&__subtitle {
-		margin: 0;
+		margin-block: 0 11px; 
 		@include font (500, clamp(13px, 1.5vw, 24px), 1.3em);
 	}
 
 	&__contact {
 		color: #FFFFFF;
-		@include font (400, clamp(14px, 1vw, 16px), 1.4em);
+		@include font (400, clamp(10px, 1vw, 16px), 1.4em);
 	}
 
 	&__politics {
-		grid-area: 3/6/4/7;
-		align-self: center;
+		grid-area: 3/3/4/4;
+		align-self: flex-start;
 		color: #BEBBBB;
 		@include font (400, 11px, 15px);
 	}
 
-	button {
-		grid-area: 3/2/4/3;
-		color: #595454;
+	&__button {
+		grid-area: 3/1/4/2;
+		button {
+			color: #595454;
+			padding-block: 18px;
+		}
 	}
 }
 
 .navbar {
-	grid-area: 1/4/2/6;
-	align-self: center;
-	@media screen and (min-width: 1700px) {
-		grid-area: 1/4/2/5;
-	}
+	grid-area: 2/3/3/4;
 
 	&__links {
 		display: flex;
 		flex-direction: column;
+		gap: 2.5vw;
 	}
 	
 	&__link {
-		color: #FFFFFF;;
+		color: #FFFFFF;
 	}
 }
 
-// @media screen and (max-width: 1000px) {
-// 	.footer {
-// 		padding-block: 19px 79px;
-// 		grid-template-columns: 7.5% 37.8% 5% 36% 1fr;
 
-// 		@media screen and (max-width: 420px) {
-// 			grid-template-columns: 5% 37.8% 10% 1fr 5%;
-// 		}
+.form {
+	grid-area: 1/5/4/6;
+	padding: 1.7vw;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 9px;
+	row-gap: 8px;
+	border-radius: 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 21.5px 0px #0E84E51C;
 
-// 		&__contacts {
-// 			flex-direction: column;
-// 			gap: 15px;
-// 		}
+	&__title {
+		margin-block: 0 21px;
+		width: 59%;
+		@include font (400, clamp(12px, 1.25vw, 20px), 1.05em);
+		color: #143C9A;
+		@media screen and (max-width: 1500px) {
+			width: 100%;
+		}
+	}
 
-// 		&__politics {
-// 			display: none;
-// 		}
+	&__input-wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: flex-start;
 
-// 		button {
-// 			grid-area: 3/2/4/3;
-// 		}
-// 	}
+		&_narrow {
+			&:nth-child(odd) {
+				width: calc((100% - 4px)/2);
+				flex-grow: 1;
+			}
+			&:nth-child(even) {
+				width: calc((100% - 18px)/2)
+			}
+		}
+	}
 
-// 	.navbar {
-// 		grid-area: 2/4/4/5;
-// 		&__links {
-// 			flex-direction: column;
-// 			gap: 13px;
-// 		}
-// 	}
-// }
+	&__input {
+		width: 100%;
+		padding: 1.1vw 1.9vw;
+		border-radius: 30px;
+		border: none;
+		background-color: #F6F5F8CC;
+		color: #747272;
+		@include font (400, clamp(10px, 0.73vw, 12px), 1.25em);
+
+		&::placeholder {
+			color: #0E344A40;
+		}
+
+		&_error {
+			background-color: #FC585820;
+		}
+	}
+
+	&__error {
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+		color: var(--orange-red);
+	}
+
+	&__button-info {
+		align-self: center;
+		width: calc(100% - 43% - 22px);
+		opacity: 20%;
+		@include font (400, clamp(8px, 0.6vw, 10px), 1em);
+		letter-spacing: -0.05em;
+		color: #0E344A;
+
+		a {
+			color: #0E344A;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__button {
+		width: 43%;
+		margin-inline-start: 13px;
+		padding-block: 18px;
+		border-radius: 30px;
+		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
+		background: var(--button-blue-gradient);
+		color: #FFFFFF;
+	}
+
+	textarea {
+		resize: vertical;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.footer {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 19px 33px 25px 36px;
+		justify-content: space-between;
+
+		&__title {
+			width: 100%;
+			margin-block-end: 13px;
+			padding-inline-end: 74%;
+		}
+
+		&__contacts {
+			width: 38%;
+			gap: 15px;
+		}
+
+		&__subtitle {
+			margin-block-end: 4px; 
+		}
+
+		&__politics {
+			display: none;
+		}
+
+		&__button {
+			width: 100%;
+			margin-block: 23px 35px;
+			button {
+				padding-block: 8px;
+			}
+	}
+
+	.navbar {
+		width: 50%;
+	}
+
+	.form {
+		padding: 17px 26px 23px 15px;
+		&__title {
+			width: 100%;
+			padding-inline-end: 48%;
+			@media screen and (max-width: 400px) {
+				padding-inline-end: 0;
+				text-align: center;
+				margin-block-end: 10px;
+			}
+		}
+
+		&__button-info {
+			width: 51%;
+			padding-inline: 0;
+			@media screen and (max-width: 400px) {
+				width: 100%;
+			}
+		}
+
+		&__input-wrapper {
+			&_narrow {
+				&:nth-child(odd) {
+					flex-grow: 0;
+					width: 62.5%;		
+				}
+				&:nth-child(even) {
+					width: calc(100% - 4px - 64%);
+				}
+			}
+			@media screen and (max-width: 400px) {
+				&:nth-child(odd),
+				&:nth-child(even) {
+					width: 100%;
+				}
+			}
+		}
+
+		&__input {
+			padding: 10px 20px;
+		}
+
+		&__button {
+			@media screen and (max-width: 400px) {
+				width: 100%;
+				margin-inline-start: 0;
+			}
+		}
+	}
+}
+}

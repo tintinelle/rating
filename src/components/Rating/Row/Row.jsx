@@ -9,7 +9,7 @@ import GrayRectangle from "../../../images/icons/GrayReactangle";
 import useWindowDimensions from "../../../services/useWindowDimensions";
 import { useState, useEffect } from "react";
 
-const Row = ({ item, number }) => {
+const Row = ({ item, number, handleOpenPopUpReview, handleOpenPopUpBuy }) => {
   const [allReviewsOpen, setAllReviewsOpen] = useState(false);
   const { width } = useWindowDimensions();
   const [rectangleWidth, setRectangleWidth] = useState("104");
@@ -128,10 +128,18 @@ const Row = ({ item, number }) => {
         <button className={style["card__button"]}>
           <ThumbsDown /> Оценить отрицательно
         </button>
-        <button className={style["card__button"]}>
+        <button
+          className={style["card__button"]}
+          onClick={() => handleOpenPopUpReview()}
+        >
           <WriteReview /> Написать отзыв
         </button>
-        <button className={style["card__button"]}>
+        <button
+          className={style["card__button"]}
+          onClick={() => {
+            handleOpenPopUpBuy();
+          }}
+        >
           <ShoppingBag /> Купить лиды
         </button>
       </div>

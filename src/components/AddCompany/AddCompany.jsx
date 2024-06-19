@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import useWindowDimensions from "../../services/useWindowDimensions";
 import { useState, useEffect } from "react";
 
-const AddCompany = () => {
+const AddCompany = ({ handleOpenPopUpAdd }) => {
   const { width } = useWindowDimensions();
   const [buttonWidth, setButtonWidth] = useState("26.25%");
   useEffect(() => {
@@ -22,7 +22,7 @@ const AddCompany = () => {
         buttonClass="button_blue"
         text="Добавить компанию в рейтинг"
         width={buttonWidth}
-        // handleClick={displayModalForm}
+        handleClick={handleOpenPopUpAdd}
       />
     </section>
   );

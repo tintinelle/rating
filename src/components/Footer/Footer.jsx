@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import useWindowDimensions from "../../services/useWindowDimensions";
 import { useState, useEffect } from "react";
 
-const Footer = () => {
+const Footer = ({ handleOpenPopUpBuy }) => {
   const { width } = useWindowDimensions();
   const [buttonWidth, setButtonWidth] = useState("52.5%");
   useEffect(() => {
@@ -50,7 +50,7 @@ const Footer = () => {
         buttonClass="button_white"
         text="Связаться"
         width={buttonWidth}
-        // handleClick={displayModalForm}
+        handleClick={handleOpenPopUpBuy}
       />
       <a
         className={style["footer__politics"]}

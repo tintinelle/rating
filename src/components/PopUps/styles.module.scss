@@ -24,7 +24,8 @@
 	justify-content: center;
 	text-align: center;
 	background-color: #FFFFFF;
-
+	overflow-y: auto;
+	
 	@media screen and (max-width: 1050px) {
 		width: 68vw;
 	}
@@ -129,5 +130,9 @@
 		@include font (400, clamp(9px, 0.73vw, 12px), 1.25em);
 		background: var(--button-blue-gradient);
 		color: #FFFFFF;
+	}
+
+	textarea {
+		resize: vertical;
 	}
 }

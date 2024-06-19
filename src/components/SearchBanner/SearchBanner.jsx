@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import useWindowDimensions from "../../services/useWindowDimensions";
 import { useState, useEffect } from "react";
 
-const SearchBanner = () => {
+const SearchBanner = ({ handleOpenPopUpChoose }) => {
   const { width } = useWindowDimensions();
   const [buttonWidth, setButtonWidth] = useState("50%");
   useEffect(() => {
@@ -25,7 +25,7 @@ const SearchBanner = () => {
           buttonClass="button_blue"
           text="Подобрать маркетолога по банкротству"
           width={buttonWidth}
-          // handleClick={displayModalForm}
+          handleClick={handleOpenPopUpChoose}
         />
       </div>
     </section>
