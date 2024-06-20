@@ -11,6 +11,7 @@ import PopUpBuy from "../components/PopUps/PopUpBuy";
 import PopUpAdd from "../components/PopUps/PopUpAdd";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function ProvidersPage() {
   const [showPopUpAdd, setShowPopUpAdd] = useState(false);
@@ -35,6 +36,14 @@ function ProvidersPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Добавить поставщика</title>
+        <meta
+          name="description"
+          content="Добавить поставщика лидов на банкротство в рейтинг. Как продать лиды на банкротство."
+        />
+        <meta name="keywords" content="продажа лидов на банкротство" />
+      </Helmet>
       {showPopUpAdd && <PopUpAdd onClose={() => setShowPopUpAdd(false)} />}
       {showPopUpBuy && (
         <PopUpBuy onClose={() => setShowPopUpBuy(!showPopUpBuy)} />

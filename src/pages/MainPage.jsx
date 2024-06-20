@@ -15,6 +15,7 @@ import PopUpChoose from "../components/PopUps/PopUpChoose";
 import PopUpReview from "../components/PopUps/PopUpReview";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function MainPage() {
   const [showPopUpAdd, setShowPopUpAdd] = useState(false);
@@ -53,6 +54,20 @@ function MainPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Рейтинг Лидов БФЛ</title>
+        <meta
+          name="description"
+          content={
+            "Рейтинг поставщиков лидов на банкротство. Где и как купить качественные лиды на банкротство в России"
+          }
+        />
+        <meta
+          name="keywords"
+          content="купить лиды на банкротство физического лица, продажа лидов на банкротство, лиды на банкротство отзывы, лиды на банкротство"
+        />
+      </Helmet>
+
       {showPopUpAdd && <PopUpAdd onClose={() => setShowPopUpAdd(false)} />}
       {showPopUpChoose && (
         <PopUpChoose onClose={() => setShowPopUpChoose(false)} />

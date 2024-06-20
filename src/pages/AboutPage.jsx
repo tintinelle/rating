@@ -14,6 +14,7 @@ import PopUpBuy from "../components/PopUps/PopUpBuy";
 import PopUpChoose from "../components/PopUps/PopUpChoose";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function AboutPage() {
   const [showPopUpChoose, setShowPopUpChoose] = useState(false);
@@ -38,6 +39,19 @@ function AboutPage() {
 
   return (
     <>
+      <Helmet>
+        <title>О рейтинге</title>
+        <meta
+          name="description"
+          content={
+            "Рейтинг лидов на банкротство. У нас вы легко найдете поставщика лидов на банкротство, а также узнаете, кто продает самые качественные лиды БФЛ"
+          }
+        />
+        <meta
+          name="keywords"
+          content="поставщик лидов на банкротство, лидогенератор по банкротству, маркетолог по банкротству"
+        />
+      </Helmet>
       {showPopUpChoose && (
         <PopUpChoose onClose={() => setShowPopUpChoose(!showPopUpChoose)} />
       )}
